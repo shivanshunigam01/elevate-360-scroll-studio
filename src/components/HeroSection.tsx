@@ -6,6 +6,11 @@ import { ArrowRight, Sparkles, Target, Megaphone, Globe, TrendingUp } from 'luci
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import seoHero from '@/assets/seo-hero.jpg';
+import socialMediaHero from '@/assets/social-media-hero.jpg';
+import brandingHero from '@/assets/branding-hero.jpg';
+import webDevHero from '@/assets/web-dev-hero.jpg';
+import ppcHero from '@/assets/ppc-hero.jpg';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -17,7 +22,8 @@ const HeroSection = () => {
       subtitle: "Dominate search rankings and drive organic traffic that converts",
       description: "Our cutting-edge SEO strategies combine artificial intelligence with proven optimization techniques to boost your visibility and revenue.",
       cta: "Boost Rankings Now",
-      gradient: "gradient-primary"
+      gradient: "gradient-primary",
+      image: seoHero
     },
     {
       icon: Megaphone,
@@ -25,7 +31,8 @@ const HeroSection = () => {
       subtitle: "Build engaged communities and viral content strategies",
       description: "Transform your social presence with data-driven campaigns that create authentic connections and measurable growth across all platforms.",
       cta: "Scale Social Presence",
-      gradient: "gradient-secondary"
+      gradient: "gradient-secondary",
+      image: socialMediaHero
     },
     {
       icon: Sparkles,
@@ -33,7 +40,8 @@ const HeroSection = () => {
       subtitle: "Craft memorable brands that resonate and convert",
       description: "From logo design to complete brand ecosystems, we create visual identities that tell your story and captivate your audience.",
       cta: "Transform Brand",
-      gradient: "gradient-accent"
+      gradient: "gradient-accent",
+      image: brandingHero
     },
     {
       icon: Globe,
@@ -41,7 +49,8 @@ const HeroSection = () => {
       subtitle: "Lightning-fast websites that drive conversions",
       description: "Built with modern technologies and optimized for performance, our websites deliver exceptional user experiences that generate results.",
       cta: "Build Website",
-      gradient: "gradient-success"
+      gradient: "gradient-success",
+      image: webDevHero
     },
     {
       icon: TrendingUp,
@@ -49,7 +58,8 @@ const HeroSection = () => {
       subtitle: "Maximize ROI with precision-targeted advertising",
       description: "Our data-driven PPC strategies deliver qualified leads and maximize your advertising spend across Google, Facebook, and beyond.",
       cta: "Launch Campaign",
-      gradient: "gradient-primary"
+      gradient: "gradient-primary",
+      image: ppcHero
     }
   ];
 
@@ -68,7 +78,7 @@ const HeroSection = () => {
           modules={[Autoplay, Pagination, EffectFade]}
           effect="fade"
           autoplay={{
-            delay: 6000,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -141,14 +151,27 @@ const HeroSection = () => {
                   {/* Visual Element */}
                   <div className="relative hidden lg:block">
                     <div className="relative w-full h-96 flex items-center justify-center">
-                      <div className={`w-64 h-64 rounded-full ${slide.gradient} blur-3xl opacity-30 absolute`} />
-                      <div className="relative z-10 p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                        <slide.icon className="w-32 h-32 text-white mx-auto floating-animation" />
+                      <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-white/10">
+                        <img 
+                          src={slide.image} 
+                          alt={slide.title}
+                          className="w-96 h-64 object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                        <div className="absolute bottom-4 left-4 flex items-center space-x-3">
+                          <div className={`p-3 rounded-full ${slide.gradient}`}>
+                            <slide.icon className="w-6 h-6 text-white" />
+                          </div>
+                          <div className="text-white">
+                            <div className="font-semibold text-sm">Digital Marketing</div>
+                            <div className="text-xs opacity-90">Excellence</div>
+                          </div>
+                        </div>
                       </div>
                       {/* Floating Elements */}
-                      <div className="absolute top-4 right-4 w-4 h-4 bg-electric-blue rounded-full pulse-glow" />
-                      <div className="absolute bottom-8 left-8 w-3 h-3 bg-cyber-pink rounded-full pulse-glow" style={{ animationDelay: '1s' }} />
-                      <div className="absolute top-1/3 left-4 w-2 h-2 bg-tech-green rounded-full pulse-glow" style={{ animationDelay: '2s' }} />
+                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-electric-blue/20 rounded-full pulse-glow backdrop-blur-sm border border-electric-blue/30" />
+                      <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-cyber-pink/20 rounded-full pulse-glow backdrop-blur-sm border border-cyber-pink/30" style={{ animationDelay: '1s' }} />
+                      <div className="absolute top-1/3 -left-8 w-4 h-4 bg-tech-green/20 rounded-full pulse-glow backdrop-blur-sm border border-tech-green/30" style={{ animationDelay: '2s' }} />
                     </div>
                   </div>
                 </div>

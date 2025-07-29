@@ -16,12 +16,10 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Careers', href: '#careers' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Industries', href: '#industries' },
+    { name: 'Blog', href: '#blog' },
+    { name: 'Contact Us', href: '#contact' },
   ];
 
   return (
