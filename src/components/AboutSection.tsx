@@ -90,12 +90,36 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-square rounded-xl gradient-primary opacity-80" />
-                <div className="aspect-square rounded-xl gradient-secondary opacity-80" />
-                <div className="aspect-square rounded-xl gradient-accent opacity-80" />
-                <div className="aspect-square rounded-xl gradient-success opacity-80" />
+            <div className="relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="aspect-square rounded-xl overflow-hidden">
+                  <img 
+                    src="/src/assets/team-meeting.jpg" 
+                    alt="Team meeting" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-square rounded-xl overflow-hidden">
+                  <img 
+                    src="/src/assets/analytics-workspace.jpg" 
+                    alt="Analytics workspace" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-square rounded-xl overflow-hidden">
+                  <img 
+                    src="/src/assets/brainstorming.jpg" 
+                    alt="Creative brainstorming" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-square rounded-xl overflow-hidden">
+                  <img 
+                    src="/src/assets/conference-presentation.jpg" 
+                    alt="Conference presentation" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
               {/* Floating elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-electric-blue rounded-full pulse-glow" />

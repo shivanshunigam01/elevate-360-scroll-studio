@@ -15,11 +15,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Industries', href: '#industries' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Industries', href: '/industries' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact Us', href: '/#contact' },
   ];
 
   return (
@@ -50,6 +50,12 @@ const Header = () => {
                 key={item.name}
                 href={item.href}
                 className="text-foreground hover:text-electric-blue transition-colors duration-200 font-medium"
+                onClick={() => {
+                  if (item.href.startsWith('/#')) {
+                    const element = document.querySelector(item.href.slice(1));
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 {item.name}
               </a>
@@ -58,12 +64,6 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button 
-              variant="outline" 
-              className="border-gradient hover:bg-electric-blue/10"
-            >
-              Login
-            </Button>
             <Button className="gradient-primary hover:opacity-90 transition-opacity">
               Get Started
             </Button>
@@ -87,15 +87,18 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   className="text-foreground hover:text-electric-blue transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    if (item.href.startsWith('/#')) {
+                      const element = document.querySelector(item.href.slice(1));
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   {item.name}
                 </a>
               ))}
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" className="border-gradient">
-                  Login
-                </Button>
                 <Button className="gradient-primary">
                   Get Started
                 </Button>

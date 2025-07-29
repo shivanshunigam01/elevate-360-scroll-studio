@@ -92,24 +92,24 @@ const HeroSection = () => {
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="container mx-auto px-4 h-full flex items-center">
-                <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+                <div className="grid lg:grid-cols-2 gap-12 items-center w-full max-w-7xl mx-auto">
                   {/* Content */}
-                  <div className="space-y-8 text-center lg:text-left">
-                    <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                  <div className="space-y-6 text-center lg:text-left relative z-20">
+                    <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-black/20 border border-white/20 backdrop-blur-sm">
                       <slide.icon className="w-5 h-5 text-electric-blue" />
-                      <span className="text-sm font-medium text-muted-foreground">
+                      <span className="text-sm font-medium text-white/90">
                         Digital Marketing Excellence
                       </span>
                     </div>
                     
                     <div className="space-y-4">
-                      <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                        <span className="text-gradient">{slide.title}</span>
+                      <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+                        <span className="text-white drop-shadow-lg">{slide.title}</span>
                       </h1>
-                      <h2 className="text-xl lg:text-2xl text-electric-blue font-semibold">
+                      <h2 className="text-lg lg:text-xl text-electric-blue font-semibold drop-shadow-md">
                         {slide.subtitle}
                       </h2>
-                      <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                      <p className="text-base lg:text-lg text-white/90 max-w-xl mx-auto lg:mx-0 drop-shadow-md">
                         {slide.description}
                       </p>
                     </div>
@@ -117,50 +117,50 @@ const HeroSection = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                       <Button 
                         size="lg" 
-                        className={`${slide.gradient} hover:opacity-90 transition-all duration-300 group px-8 py-6 text-lg shadow-electric`}
+                        className={`${slide.gradient} hover:opacity-90 transition-all duration-300 group px-6 py-4 text-base shadow-electric`}
                       >
                         {slide.cta}
-                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
                       <Button 
                         size="lg" 
                         variant="outline" 
-                        className="border-gradient hover:bg-white/5 px-8 py-6 text-lg"
+                        className="border-white/30 bg-white/10 hover:bg-white/20 text-white px-6 py-4 text-base backdrop-blur-sm"
                       >
                         Get Free Proposal
                       </Button>
                     </div>
 
                     {/* Stats */}
-                    <div className="flex justify-center lg:justify-start space-x-8 pt-8">
+                    <div className="flex justify-center lg:justify-start space-x-6 pt-6">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-gradient">500+</div>
-                        <div className="text-sm text-muted-foreground">Projects</div>
+                        <div className="text-xl font-bold text-white drop-shadow-lg">500+</div>
+                        <div className="text-xs text-white/80">Projects</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-gradient">98%</div>
-                        <div className="text-sm text-muted-foreground">Success Rate</div>
+                        <div className="text-xl font-bold text-white drop-shadow-lg">98%</div>
+                        <div className="text-xs text-white/80">Success Rate</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-gradient">24/7</div>
-                        <div className="text-sm text-muted-foreground">Support</div>
+                        <div className="text-xl font-bold text-white drop-shadow-lg">24/7</div>
+                        <div className="text-xs text-white/80">Support</div>
                       </div>
                     </div>
                   </div>
 
                   {/* Visual Element */}
                   <div className="relative hidden lg:block">
-                    <div className="relative w-full h-96 flex items-center justify-center">
-                      <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-white/10">
+                    <div className="relative w-full h-80 flex items-center justify-center">
+                      <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm">
                         <img 
                           src={slide.image} 
                           alt={slide.title}
-                          className="w-96 h-64 object-cover"
+                          className="w-80 h-56 object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         <div className="absolute bottom-4 left-4 flex items-center space-x-3">
-                          <div className={`p-3 rounded-full ${slide.gradient}`}>
-                            <slide.icon className="w-6 h-6 text-white" />
+                          <div className={`p-2 rounded-full ${slide.gradient}`}>
+                            <slide.icon className="w-5 h-5 text-white" />
                           </div>
                           <div className="text-white">
                             <div className="font-semibold text-sm">Digital Marketing</div>
@@ -169,9 +169,9 @@ const HeroSection = () => {
                         </div>
                       </div>
                       {/* Floating Elements */}
-                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-electric-blue/20 rounded-full pulse-glow backdrop-blur-sm border border-electric-blue/30" />
-                      <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-cyber-pink/20 rounded-full pulse-glow backdrop-blur-sm border border-cyber-pink/30" style={{ animationDelay: '1s' }} />
-                      <div className="absolute top-1/3 -left-8 w-4 h-4 bg-tech-green/20 rounded-full pulse-glow backdrop-blur-sm border border-tech-green/30" style={{ animationDelay: '2s' }} />
+                      <div className="absolute -top-3 -right-3 w-6 h-6 bg-electric-blue/30 rounded-full pulse-glow backdrop-blur-sm border border-electric-blue/50" />
+                      <div className="absolute -bottom-3 -left-3 w-5 h-5 bg-cyber-pink/30 rounded-full pulse-glow backdrop-blur-sm border border-cyber-pink/50" style={{ animationDelay: '1s' }} />
+                      <div className="absolute top-1/3 -left-6 w-4 h-4 bg-tech-green/30 rounded-full pulse-glow backdrop-blur-sm border border-tech-green/50" style={{ animationDelay: '2s' }} />
                     </div>
                   </div>
                 </div>

@@ -17,7 +17,7 @@ const GallerySection = () => {
       category: 'Campaigns',
       title: 'Nike Campaign Success Story',
       description: 'How we increased Nike\'s social engagement by 300%',
-      thumbnail: '/api/placeholder/400/300',
+      thumbnail: '/src/assets/campaign-success.jpg',
       stats: { views: '2.5M', engagement: '15%', conversions: '25%' }
     },
     {
@@ -25,7 +25,7 @@ const GallerySection = () => {
       category: 'Events',
       title: 'Digital Marketing Summit 2024',
       description: 'Our team presenting at the industry\'s biggest event',
-      thumbnail: '/api/placeholder/400/300',
+      thumbnail: '/src/assets/conference-presentation.jpg',
       stats: { attendees: '5K+', presentations: '12', awards: '3' }
     },
     {
@@ -33,7 +33,7 @@ const GallerySection = () => {
       category: 'Case Studies',
       title: 'E-commerce Growth Case Study',
       description: 'From startup to $10M revenue in 18 months',
-      thumbnail: '/api/placeholder/400/300',
+      thumbnail: '/src/assets/web-development.jpg',
       stats: { revenue: '+400%', traffic: '+250%', conversions: '+180%' }
     },
     {
@@ -41,7 +41,7 @@ const GallerySection = () => {
       category: 'Behind Scenes',
       title: 'Creative Team in Action',
       description: 'Behind the scenes of our creative process',
-      thumbnail: '/api/placeholder/400/300',
+      thumbnail: '/src/assets/brainstorming.jpg',
       stats: { projects: '50+', ideas: '500+', coffees: '∞' }
     },
     {
@@ -49,7 +49,7 @@ const GallerySection = () => {
       category: 'Campaigns',
       title: 'Tech Startup Launch Campaign',
       description: 'Viral launch campaign that broke the internet',
-      thumbnail: '/api/placeholder/400/300',
+      thumbnail: '/src/assets/campaign-success.jpg',
       stats: { reach: '50M+', shares: '100K+', mentions: '25K+' }
     },
     {
@@ -57,8 +57,24 @@ const GallerySection = () => {
       category: 'Events',
       title: 'Team Building Workshop',
       description: 'Innovation workshop with our creative team',
-      thumbnail: '/api/placeholder/400/300',
+      thumbnail: '/src/assets/team-meeting.jpg',
       stats: { participants: '25', ideas: '100+', fun: '∞' }
+    },
+    {
+      type: 'video',
+      category: 'Case Studies',
+      title: 'Analytics Dashboard Project',
+      description: 'Real-time analytics platform for enterprise clients',
+      thumbnail: '/src/assets/analytics-workspace.jpg',
+      stats: { efficiency: '+300%', insights: '1000+', clients: '50+' }
+    },
+    {
+      type: 'image',
+      category: 'Campaigns',
+      title: 'Brand Strategy Workshop',
+      description: 'Comprehensive brand identity development process',
+      thumbnail: '/src/assets/brainstorming.jpg',
+      stats: { brands: '100+', strategies: '500+', success: '95%' }
     }
   ];
 
@@ -129,8 +145,13 @@ const GallerySection = () => {
             >
               <div className="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 hover:scale-105">
                 {/* Thumbnail */}
-                <div className="relative aspect-video bg-gradient-to-br from-electric-blue/20 to-cyber-pink/20 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-electric-blue/10 to-cyber-pink/10" />
+                <div className="relative aspect-video overflow-hidden">
+                  <img 
+                    src={item.thumbnail} 
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   
                   {/* Play Button for Videos */}
                   {item.type === 'video' && (
